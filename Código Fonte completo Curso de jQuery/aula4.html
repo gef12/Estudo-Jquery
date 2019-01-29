@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>Aula 4 - FadOut e FadeIn()</title>
+
+	
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+	
+<script type="text/javascript">
+	$(document).ready(function (){
+			$("img").fadeOut(0);
+			$("img").fadeIn(6000);
+			
+			$("#par1").click(function (){
+				$(this).slideUp();
+			});
+			
+			$("#par2").click(function (){
+				$(this).fadeOut(5000, function (){
+					alert("Cliente excluido com sucesso.");
+				});
+			});
+			
+			$("#par3").click(function (){
+				$("#par2").fadeIn(5000);
+			});
+			
+			$("h1").click(function (){
+				$(this).slideUp();
+			});
+	});
+</script>	
+
+</head>
+
+<body>
+	<p id="par1">Resultado: 10 + 10 = 20</p><br>
+	
+	<p id="par2">RAFAEL</p><br>
+	
+	<p id="par3">RAFAEL</p><br>
+	
+	<h1>Exemplo jQuery</h1>
+	
+	<br><br>
+	<img src="http://www.codesource.com.br/logo.jpg">
+</body>
+
+</html>

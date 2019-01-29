@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>Aula 7 - KeyPress, Focus, Change, Val</title>
+
+	
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+	
+<script type="text/javascript">
+	$(document).ready(function (){
+		$("p").click(function(){
+			$("p").empty();
+		});
+		
+		$("#btn_show").click(function(){
+			$("#img_logo").show();
+		});
+		
+		$("#btn_hide").click(function(){
+			$("#img_logo").hide();
+		});
+		
+		$("#btn_act").click(function(){
+			if ( $(this).val() == "+"){
+				$("#slide_exemplo").slideDown();
+				$(this).val("-")
+			} else {
+				$("#slide_exemplo").slideUp();
+				$(this).val("+");
+			}
+		});
+	});
+</script>
+
+</head>
+
+<body>
+	<p id="slide_exemplo">Curso de jQuery - SlideDown Curso de jQuery - SlideDown Curso de jQuery - SlideDown</p>
+	<input id="btn_act" type="button" value="-">
+	
+	<br><br><br>
+	<p contenteditable="true">Curso de jQuery</p>
+	
+	<img id="img_logo" src="http://www.codesource.com.br/logo.jpg"><br>
+	<input id="btn_show" type="button" value="SHOW">
+	<input id="btn_hide" type="button" value="HIDE">
+	
+</body>
+
+</html>

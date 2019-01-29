@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>Aula 9 - Animate</title>
+
+	
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+	
+<script type="text/javascript">
+	$(document).ready(function (){
+		$("#animar").click(function (){
+			$("#exemplo").animate({
+			width: "80%",
+			marginLeft: "0.9",
+			fontSize: "50px",
+			borderWidth: "20px"}, 2000);
+		});
+		$("#animar2").click(function (){
+			$("#exemplo_3").animate({
+			fontSize: "+=5px"}, "slow");
+		});
+	});
+</script>
+
+</head>
+
+<body>
+		<div id="exemplo" style="width:200px;height:150px;border: 1px solid #c0c0c0;background-color:#FF0000">
+		
+		</div>
+		<p id="exemplo2">MEU TEXTO</p>
+		<input type="button" value="Animar" id="animar">
+		<br><br>
+		<p id="exemplo_3">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+		<input type="button" value="Zoom" id="animar2">
+</body>
+
+</html>

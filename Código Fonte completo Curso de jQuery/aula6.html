@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>Aula 6 - KeyPress, Focus, Change, Val</title>
+
+	
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+	
+<script type="text/javascript">
+	$(document).ready(function (){
+			$("#txtFone").focus();
+			
+			$("#txtFone").keypress(function (e){
+				if (e.which == 13){
+					$("#txtData").focus();
+				}
+			});
+			
+			$("#txtData").keyup(function (){
+				if ( $("#txtData").val().length == 2){
+					$("#txtData").val( $("#txtData").val() + "/");
+				} else if ( $("#txtData").val().length == 5){
+					$("#txtData").val( $("#txtData").val() + "/");
+				}
+			});
+			
+			$("#cores").change(function (){
+				$("select option:selected").each(function () {
+					if ($(this).text() == "Azul"){
+						$("#img_sapato").attr("src", "azul.jpg");
+					} else if ($(this).text() == "Verde"){
+						$("#img_sapato").attr("src", "verde.jpg");
+					} else if ($(this).text() == "Amarelo"){
+						$("#img_sapato").attr("src", "amarelo.jpg");
+					} 
+				});
+			});
+	});
+</script>
+
+</head>
+
+<body>
+	Telefone: <input type="text" id="txtFone"><br>
+	Data: <input type="text" id="txtData" maxlength="10">
+	<br><br>
+	Cores:
+	<select id="cores">
+		<option>Azul</option>
+		<option>Verde</option>
+		<option>Amarelo</option>
+		<option>Cinza</option>
+	</select>
+	<br>
+	<h3>Sapato: </h3>
+	<img src="azul.jpg" id="img_sapato">
+</body>
+
+</html>
